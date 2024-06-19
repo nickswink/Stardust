@@ -11208,6 +11208,11 @@ typedef struct _HEAP_DEBUGGING_INFORMATION
 #define RtlReleaseLockRoutine(L)    RtlLeaveCriticalSection((PRTL_CRITICAL_SECTION)(L))
 #define RtlDeleteLockRoutine(L)     RtlDeleteCriticalSection((PRTL_CRITICAL_SECTION)(L))
 
+typedef struct _CFG_CALL_TARGET_INFO {
+  ULONG_PTR Offset;
+  ULONG_PTR Flags;
+} CFG_CALL_TARGET_INFO, *PCFG_CALL_TARGET_INFO;
+
 typedef struct _RTL_MEMORY_ZONE_SEGMENT
 {
 	struct _RTL_MEMORY_ZONE_SEGMENT *NextSegment;
